@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --color1:rgb(176, 44, 44);
+    --color2:rgba(5, 27, 27, 0.919);
+}
+
+
+
+
+/* .zoom-in-out-box {
+    margin: 24px;
+    width: 50px;
+    height: 50px;
+    background: #f50057;
+    animation: zoom-in-zoom-out 1s ease infinite;
+} */
+  
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: var(--color1);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+header{
+    padding: 1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: var(--color2);
+}
+
+.search{
+    background-color: var(--color2);
+    border: 2px solid var(--color1);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+    font-family: inherit;
+   
+}
+
+.search:focus{
+    margin-right: 720px;
+    outline:0;
+    font-size: 30px;
+    text-align: center;
+    background-color: var(--color2);
+    font-weight: bolder;
+    font-style:italic;
+    animation: cssmarquee 10s linear infinite;
+    animation: vibrate 0.5s;
+    animation-iteration-count: infinite;
+}
+.search:hover{
+    outline:0;
+    background-color: var(--color2);
+    font-weight: bolder;
+    animation: cssmarquee 10s linear infinite;
+    animation: vibrate 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.search::placeholder{
+    color:whitesmoke;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    width: 400px;   
+    margin: 1rem;
+    border-radius: 30px;
+    box-shadow: 10px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--color2);
+    position: relative;
+    overflow: hidden;
+}
+.movie:hover{
+    animation: zoom-in-zoom-out 0.6 s ease 1;
+    width: 440px;   
+    margin: 1rem;
+    border-radius: 20px;
+    box-shadow: 10px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--color2);
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-1deg);
+    
+}
+
+@keyframes vibrate {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-0.8deg); }
+    20% { transform: rotate(1deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(1deg); }
+    50% { transform: rotate(-0.8deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-0.8deg); }
+    80% { transform: rotate(1deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(-0.8deg); }
+}
+.movie img{
+    width:99.9%;
+}
+.movie img:hover{
+    width:100%;
+    box-shadow: 100px 100px 100px rgba(0,0,0,0.1);
+    
+    
+}
+
+.movie-info{
+    color:#eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+    align-self: center;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.movie-info span{
+    background-color: var(--color1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color: lightgreen;
+}
+.movie-info span.orange{
+    color: orange;
+}
+.movie-info span.red{
+    color: red;
+}
+
+.overview h3:hover{
+    font-size:30px;
+    font-style:italic;
+}
+.overview {
+    font-size:18px;
+    
+}
+.overview:hover{
+    font-size:22px;
+    font-weight:lighter;
+    font-style:italic;
+    animation: vibrate 0.4s;
+    animation-iteration-count:infinite;
+}
+.overview{
+    position: absolute;
+    color:white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:var(--color2);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    text-align: center;
+}
+.movie:hover .overview{
+    transform: translateY(0);
+}
